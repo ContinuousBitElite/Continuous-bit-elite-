@@ -69,3 +69,49 @@ class ZeroKnowledgeProof:
         expected_proof = hashlib.sha256(data + self._secret).digest()
         expected_commitment = hashlib.sha256(self._secret + b"zkp_salt").digest()
         return proof == expected_proof and commitment == expected_commitment
+
+
+# ✅ إضافة BlockchainVerifier (الكلاس المفقود)
+class BlockchainVerifier:
+    """Blockchain verification utility for data integrity."""
+    
+    @staticmethod
+    def verify_integrity(data: bytes, hash_value: bytes) -> bool:
+        """
+        Verify data integrity using SHA-256.
+        
+        Args:
+            data: Original data
+            hash_value: Expected hash value
+            
+        Returns:
+            True if hash matches, False otherwise
+        """
+        return hashlib.sha256(data).digest() == hash_value
+    
+    @staticmethod
+    def verify_merkle_proof(data: bytes, proof: List[bytes], root: bytes, index: int) -> bool:
+        """
+        Verify a Merkle proof against a root hash.
+        
+        Args:
+            data: Data to verify
+            proof: Merkle proof (list of sibling hashes)
+            root: Merkle root hash
+            index: Index of the data in the tree
+            
+        Returns:
+            True if proof is valid, False otherwise
+        """
+        current_hash = hashlib.sha256(data).digest()
+        current_index = index
+        
+        for sibling_hash in proof:
+            if current_index % 2 == 0:
+                combined = current_hash + sibling_hash
+            else:
+                combined = sibling_hash + current_hash
+            current_hash = hashlib.sha256(combined).digest()
+            current_index //= 2
+        
+        return current_hash == root
