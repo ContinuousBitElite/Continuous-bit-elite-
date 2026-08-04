@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="continuous-bit-elite",
-    version="4.0.1",
+    version="4.0.2",
     author="ContinuousBitElite",
     author_email="continuous.bit.elite@gmail.com",
     description="Ultra-fast compression (3122x) with 4x ratio and blockchain integration",
