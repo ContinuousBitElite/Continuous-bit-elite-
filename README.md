@@ -5,7 +5,6 @@ Ultra-fast compression (3122×) with 4× ratio and blockchain integration
 [![PyPI version](https://img.shields.io/pypi/v/continuous-bit-elite)](https://pypi.org/project/continuous-bit-elite/)
 [![Python versions](https://img.shields.io/pypi/pyversions/continuous-bit-elite.svg)](https://pypi.org/project/continuous-bit-elite/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 ## 🚀 Features
 
 - **4x compression** (75% space saving)
