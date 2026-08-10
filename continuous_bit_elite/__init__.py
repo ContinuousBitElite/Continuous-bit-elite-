@@ -7,7 +7,7 @@ from .core import UltraFastEngine
 from .blockchain import MerkleTree, ZeroKnowledgeProof, BlockchainVerifier
 from .compression import EliteCompressionAPI
 
-__version__ = "4.0.15"
+__version__ = "4.0.16"
 __all__ = [
     "UltraFastEngine",
     "MerkleTree",
