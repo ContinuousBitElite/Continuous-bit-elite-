@@ -29,8 +29,7 @@ jobs:
     
     - name: Run tests
       run: |
-        pytest continuous_bit_elite/tests/ --cov=continuous_bit_elite
-    
+       pytest tests/ --cov=continuous_bit_elite
     - name: Upload coverage
       uses: codecov/codecov-action@v3
       with:
